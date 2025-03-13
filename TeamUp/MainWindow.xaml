@@ -1,0 +1,363 @@
+﻿<Window x:Class="TeamUp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TeamUp"
+        mc:Ignorable="d"
+        Title="TeamUp" Height="749" Width="996" Icon="Data/Image/logo.jpg" ResizeMode="NoResize" Opacity="0.8" WindowStyle="None" MouseLeftButtonDown="Window_MouseLeftButtonDown" MouseMove="Window_MouseMove" MouseLeftButtonUp="Window_MouseLeftButtonUp">
+    <Grid x:Name="MainWindowGrid" Background="#FF211951">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Border x:Name="LoginBorder" BorderBrush="Black" BorderThickness="1" Margin="-930,39,1082,77" CornerRadius="20,20,20,20">
+            <Border.Background>
+                <ImageBrush ImageSource="/Data/Image/accountbackground.png"/>
+            </Border.Background>
+        </Border>
+        <Border x:Name="BackgroundBlurLogin" BorderBrush="White" BorderThickness="2,2,2,2" Margin="-748,82,1264,119" Background="#FFF9F9F9" Opacity="0.5" CornerRadius="50,50,50,50"/>
+        <Label x:Name="AccountLabelParagraph" Content="Great things await you." Margin="-601,189,1411,525" FontFamily="Poppins Black" FontSize="16" Foreground="#FF6D6D6D"/>
+        <Label x:Name="AccountLabel" Content="Authentication"  Margin="-635,149,1377,541" FontFamily="Poppins Black" FontSize="36" Foreground="White"/>
+        <Border x:Name="LoginButtonBorder" BorderThickness="2" Margin="-667,508,1511,177" Background="#FF9181F4" CornerRadius="15,15,15,15">
+            <Button x:Name="Login1"   HorizontalAlignment="Center" VerticalAlignment="Top" Background="{x:Null}" BorderBrush="{x:Null}" Height="43" Width="132" Foreground="White" Content="Login" FontSize="20" Margin="0,7,0,0" Click="Login_Click"/>
+        </Border>
+        <Border x:Name="RegisterBorder" BorderThickness="2" Margin="-497,508,1341,177" Background="#FF9181F4" CornerRadius="15,15,15,15">
+            <Button x:Name="Register1" HorizontalAlignment="Center" VerticalAlignment="Center" Background="{x:Null}" BorderBrush="{x:Null}" Height="43" Width="132" Click="Register_Click" Content="Register" Foreground="White" FontFamily="Poppins" FontSize="20"/>
+        </Border>
+        <Border x:Name="UsernameBorder" BorderBrush="#FFDFD9FB" BorderThickness="1" Margin="-628,299,1384,412" Background="#FFF0EDFF" CornerRadius="10,10,10,10">
+            <TextBox x:Name="User1" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Width="232" Height="34" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF292929" FontSize="20" Margin="0,3,0,0" />
+        </Border>
+        <Border x:Name="PasswordBorder" BorderBrush="#FFDFD9FB" BorderThickness="1" Margin="-628,376,1384,335" Background="#FFF0EDFF" CornerRadius="10,10,10,10">
+            <Border x:Name="PasswordBorder_Copy" BorderBrush="#FFDFD9FB" BorderThickness="1" Margin="0,0,-2,-2" Background="#FFF0EDFF" CornerRadius="10,10,10,10">
+                <TextBox x:Name="Pass1" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Width="232" Height="34" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF292929" FontSize="20" Margin="0,3,0,0"/>
+            </Border>
+        </Border>
+        <Rectangle x:Name="ButtonDesign" HorizontalAlignment="Left" Height="53" Margin="-72,672,0,0" VerticalAlignment="Top" Width="56" Fill="#FF474F7A" RadiusX="15" RadiusY="15"/>
+        <Button x:Name="ShowButton" Content="Button" HorizontalAlignment="Left" Margin="-62,682,0,0" VerticalAlignment="Top" BorderBrush="{x:Null}" Height="34" Width="36" Foreground="{x:Null}" Click="ShowButton_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="/Data/Image/plus.png"/>
+            </Button.Background>
+        </Button>
+        <Grid x:Name="SettingsGrid" Margin="1060,820,-1050,-811">
+            <Label x:Name="MyProfileText1" Content="Settings" HorizontalAlignment="Center" Margin="0,42,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Width="218" Foreground="White" FontFamily="Poppins SemiBold" FontWeight="Bold" FontSize="48" Height="70">
+                <Label.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleX="1"/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Label.RenderTransform>
+            </Label>
+            <CheckBox x:Name="TopMostCheck" Content="TopMost" HorizontalAlignment="Left" Margin="315,190,0,0" VerticalAlignment="Top" Height="52" Width="178" Background="#FFCACACA" FontSize="20" Checked="CheckBox_Checked" IsChecked="False" Unchecked="CheckBox_unChecked"/>
+            <Label Content="Shows TeamUp over other applications." HorizontalAlignment="Left" Margin="299,242,0,0" VerticalAlignment="Top" Background="{x:Null}" FontSize="20" Foreground="#FFA2A2A2" Width="378"/>
+            <Border x:Name="ResetApp" BorderThickness="2" Margin="309,331,309,331" Background="#FF9181F4" CornerRadius="15,15,15,15">
+                <Button x:Name="ResetAppButton"   HorizontalAlignment="Center" VerticalAlignment="Center" Background="{x:Null}" BorderBrush="{x:Null}" Height="43" Width="340" Foreground="White" Content="Reset App" FontSize="20" Click="ResetAppButton_Click"/>
+            </Border>
+            <Label Content="Reset your application, without erasing&#xD;&#xA; your account." HorizontalAlignment="Left" Margin="309,427,0,0" VerticalAlignment="Top" Background="{x:Null}" FontSize="20" Foreground="#FFA2A2A2" Width="378" Height="74"/>
+            <Border x:Name="ResetApp_Copy" BorderThickness="2" Margin="309,510,309,152" Background="#FF9181F4" CornerRadius="15,15,15,15">
+                <Button x:Name="EraseAccount"   HorizontalAlignment="Center" VerticalAlignment="Center" Background="{x:Null}" BorderBrush="{x:Null}" Height="43" Width="340" Foreground="White" Content="Erase Account" FontSize="20" Click="EraseAccount_Click"/>
+            </Border>
+            <Label Content="Reset your application, and erasing &#xD;&#xA;your account" HorizontalAlignment="Center" Margin="0,611,0,0" VerticalAlignment="Top" Background="{x:Null}" FontSize="20" Foreground="#FFA2A2A2" Width="378" Height="74"/>
+        </Grid>
+        <Button x:Name="CloseApp" Content="Button" Margin="943,10,10,0" VerticalAlignment="Top" Height="42" Foreground="{x:Null}" BorderBrush="{x:Null}" Click="CloseApp_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="/Data/Image/cross-small.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="Minimize" Content="Button" HorizontalAlignment="Left" Margin="898,18,0,0" VerticalAlignment="Top" BorderBrush="{x:Null}" Foreground="{x:Null}" Height="28" Click="Minimize_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="/Data/Image/minus-small.png"/>
+            </Button.Background>
+        </Button>
+        <Grid x:Name="HomeGrid" Margin="-1072,-761,1082,770">
+            <Label x:Name="MyProfileText2" Content="Home" HorizontalAlignment="Center" Margin="0,30,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Width="152" Foreground="White" FontFamily="Poppins SemiBold" FontWeight="Bold" FontSize="48" Height="70">
+                <Label.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleX="1"/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Label.RenderTransform>
+            </Label>
+            <Border x:Name="ProfileBorder_Copy" BorderThickness="1" Margin="42,226,519,228" CornerRadius="20,20,20,20" Background="#FF474F7A"/>
+            <Image x:Name="StatsIconHome" Width="92" VerticalAlignment="Center" Source="/Data/Image/chart-simple.png" Height="90" HorizontalAlignment="Left" Margin="70,0,0,0"/>
+            <Label x:Name="StatsHome" Content="Stats for this week" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Width="198" Foreground="White" FontFamily="Calibri" FontSize="24" Height="41" Margin="61,250,0,0">
+                <Label.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleX="1"/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Label.RenderTransform>
+            </Label>
+            <Label x:Name="CollabsMadeWeek" Content="Colaborations made : " HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Width="257" Foreground="White" FontFamily="Poppins SemiBold" FontSize="18" Height="46" Margin="192,311,0,0">
+                <Label.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleX="1"/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Label.RenderTransform>
+            </Label>
+            <Label x:Name="GroupsJoinedWeek" Content="Workspaces joined : " HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Width="257" Foreground="White" FontFamily="Poppins SemiBold" FontSize="18" Height="46" Margin="192,356,0,0">
+                <Label.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleX="1"/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Label.RenderTransform>
+            </Label>
+            <Label x:Name="ContributionPointsWeek" Content="Contribution Points: " HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Width="256" Foreground="White" FontFamily="Poppins SemiBold" FontSize="18" Height="46" Margin="64,454,0,0">
+                <Label.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleX="1"/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Label.RenderTransform>
+            </Label>
+            <Label x:Name="LikesWeek" Content="Likes : " HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Width="257" Foreground="White" FontFamily="Poppins SemiBold" FontSize="18" Height="46" Margin="192,402,0,0">
+                <Label.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleX="1"/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Label.RenderTransform>
+            </Label>
+            <Border x:Name="AccountInfoHome" BorderThickness="1" Margin="14,20,641,637" CornerRadius="20,20,20,20" Background="#FF474F7A"/>
+            <Image x:Name="ProfilePicture_Copy" Margin="28,31,0,0" Width="60" VerticalAlignment="Top" Source="/Data/Image/Sample_User_Icon.png" Height="62" HorizontalAlignment="Left"/>
+            <Label x:Name="HomeUsername" Content="ACCOUNT_NAME" HorizontalAlignment="Left" Margin="88,30,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Width="200" Foreground="White" FontFamily="Poppins SemiBold" FontWeight="Bold" FontSize="24" Height="41">
+                <Label.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleX="1"/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Label.RenderTransform>
+            </Label>
+            <Border x:Name="ActivityWeek" BorderThickness="1" Margin="519,226,42,228" CornerRadius="20,20,20,20" Background="#FF474F7A"/>
+            <Label x:Name="ActivityLabel" Content="Activity this week" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Width="198" Foreground="White" FontFamily="Calibri" FontSize="24" Height="41" Margin="534,250,0,0">
+                <Label.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleX="1"/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Label.RenderTransform>
+            </Label>
+            <ListBox x:Name="ActivityList" Margin="534,294,54,249" Background="{x:Null}" Foreground="White" BorderBrush="{x:Null}" IsSynchronizedWithCurrentItem="True">
+                <ListBoxItem x:Name="Activity1" Content="Romanian Essay from 3/12/2024" Background="#FF4A548C" FontSize="18"/>
+                <ListBoxItem x:Name="Activity2" Content="IT Competition : Solving a real-world problem for 2/10/2024" Background="#FF4A548C" FontSize="14"/>
+            </ListBox>
+        </Grid>
+        <Grid x:Name="MyProfileGrid" Margin="69,896,-59,-886">
+            <Border x:Name="ProfileBorder" BorderThickness="1" Margin="38,236,523,218" CornerRadius="20,20,20,20" Background="#FF474F7A"/>
+            <Image x:Name="ProfilePicture" Margin="50,295,0,0" Width="132" VerticalAlignment="Top" Source="/Data/Image/Sample_User_Icon.png" Height="130" HorizontalAlignment="Left"/>
+            <Label x:Name="Username" Content="ACCOUNT_NAME" HorizontalAlignment="Left" Margin="180,309,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Width="199" Foreground="White" FontFamily="Poppins SemiBold" FontWeight="Bold" FontSize="24" Height="41">
+                <Label.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleX="1"/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Label.RenderTransform>
+            </Label>
+            <Label x:Name="DateCreated" Content="Created on : " HorizontalAlignment="Left" Margin="180,348,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Width="265" Foreground="White" FontFamily="Poppins SemiBold" Height="40" FontSize="18">
+                <Label.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleX="1"/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Label.RenderTransform>
+            </Label>
+            <Border x:Name="StatsBorder" BorderThickness="1" Margin="524,236,38,218" Background="#FF474F7A" CornerRadius="20,20,20,20"/>
+            <Label x:Name="Profile" Content="Profile" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Width="199" Foreground="White" FontFamily="Calibri" FontSize="24" Height="41" Margin="59,254,0,0">
+                <Label.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleX="1"/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Label.RenderTransform>
+            </Label>
+            <Label x:Name="Stats" Content="Stats" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Width="199" Foreground="White" FontFamily="Calibri" FontSize="24" Height="41" Margin="551,254,0,0">
+                <Label.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleX="1"/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Label.RenderTransform>
+            </Label>
+            <Image x:Name="StatsIcon" Width="92" VerticalAlignment="Top" Source="/Data/Image/chart-simple.png" Height="90" HorizontalAlignment="Left" Margin="551,330,0,0"/>
+            <Label x:Name="CollabPoints" Content="Contribution points :" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Width="257" Foreground="White" FontFamily="Poppins SemiBold" FontSize="18" Height="46" Margin="551,466,0,0">
+                <Label.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleX="1"/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Label.RenderTransform>
+            </Label>
+            <Label x:Name="CollabJoined" Content="Workspaces joined :" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Width="257" Foreground="White" FontFamily="Poppins SemiBold" FontSize="18" Height="47" Margin="669,353,0,0">
+                <Label.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleX="1"/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Label.RenderTransform>
+            </Label>
+            <Label x:Name="CollabMade" Content="Colaborations made : " HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Width="257" Foreground="White" FontFamily="Poppins SemiBold" FontSize="18" Height="47" Margin="669,301,0,0">
+                <Label.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleX="1"/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Label.RenderTransform>
+            </Label>
+            <Label x:Name="MyProfileText" Content="MyProfile" HorizontalAlignment="Center" Margin="0,56,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Width="236" Foreground="White" FontFamily="Poppins SemiBold" FontWeight="Bold" FontSize="48" Height="70">
+                <Label.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleX="1"/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Label.RenderTransform>
+            </Label>
+            <Label x:Name="Likes" Content="Likes :" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Width="257" Foreground="White" FontFamily="Poppins SemiBold" FontSize="18" Height="48" Margin="669,405,0,0">
+                <Label.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleX="1"/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Label.RenderTransform>
+            </Label>
+            <Border x:Name="LogOutBorder" BorderThickness="2" Margin="59,430,545,234" Background="#FF9181F4" CornerRadius="15,15,15,15">
+                <Button x:Name="LogoutButton" HorizontalAlignment="Center" VerticalAlignment="Center" Background="{x:Null}" BorderBrush="{x:Null}" Height="43" Width="160" Foreground="White" Content="Logout" FontSize="20" Click="Logout_Click" />
+            </Border>
+        </Grid>
+        <Grid x:Name="SelectWorkspaceGrid" Margin="1030,-7,-1030,7">
+            <Label x:Name="MyProfileText3" Content="Workspaces" Margin="350,41,350,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Foreground="White" FontFamily="Poppins SemiBold" FontWeight="Bold" FontSize="48" Height="70">
+                <Label.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleX="1"/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Label.RenderTransform>
+            </Label>
+            <Border x:Name="ProfileBorder_Copy1" BorderThickness="1" Margin="103,164,103,99" CornerRadius="20,20,20,20" Background="#FF474F7A"/>
+            <Label x:Name="StatsHome_Copy" Content="Select a workspace or create a new one" HorizontalAlignment="Center" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Width="594" Foreground="White" FontFamily="Calibri" FontSize="36" Height="71" Margin="0,186,0,0">
+                <Label.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleX="1"/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Label.RenderTransform>
+            </Label>
+            <ListBox x:Name="Workspaces" Margin="130,262,130,99" Background="{x:Null}" Foreground="White" BorderBrush="{x:Null}" IsSynchronizedWithCurrentItem="True"/>
+            <Border x:Name="CreateWorkspaceBorder" BorderThickness="2" Margin="382,659,382,14" Background="#FF9181F4" CornerRadius="15,15,15,15">
+                <Button x:Name="CreateWorkspaceButon" HorizontalAlignment="Center" VerticalAlignment="Center" Background="{x:Null}" BorderBrush="{x:Null}" Height="56" Width="202" Foreground="White" Content="Create Workspace" FontSize="20" Click="CreateWorkspaceButon_Click" />
+            </Border>
+            <Border x:Name="ProfileBorder_Copy2" BorderThickness="1" Margin="110,164,96,99" CornerRadius="20,20,20,20" Background="#FF474F7A" Visibility="Hidden">
+                <Label x:Name="StatsHome_Copy1" Content="Name :" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Width="77" Foreground="White" FontFamily="Calibri" Height="40" Margin="220,136,0,0" FontSize="22">
+                    <Label.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform ScaleX="1"/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Label.RenderTransform>
+                </Label>
+            </Border>
+            <RadioButton x:Name="EssayRadio" Content="Essay" Margin="382,392,510,327" FontSize="18" Foreground="White" Background="White" Visibility="Hidden"/>
+            <RadioButton x:Name="ProgRadio" Content="Program" Margin="491,392,401,327" FontSize="18" Foreground="White" Visibility="Hidden"/>
+
+            <Border x:Name="WorkspaceNameBox" BorderBrush="#FFDFD9FB" BorderThickness="1" Margin="442,300,314,411" Background="#FFF0EDFF" CornerRadius="10,10,10,10" Visibility="Hidden">
+                <TextBox x:Name="NameTextBoxWorkspace" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Width="232" Height="34" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF292929" FontSize="20" Margin="0,3,0,0" />
+            </Border>
+        </Grid>
+        <Grid x:Name="EssayWorkspaceGrid" Margin="-1072,1568,1072,-1568">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Label x:Name="WorkspaceName" Content="The Symphony of the City" HorizontalAlignment="Center" Margin="0,29,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Width="608" Foreground="White" FontFamily="Poppins SemiBold" FontWeight="Bold" FontSize="48" Height="70">
+                <Label.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleX="1"/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Label.RenderTransform>
+            </Label>
+            <Border x:Name="EssayBorder" BorderThickness="1" Margin="10,122,10,110" CornerRadius="20,20,20,20" Background="#FF474F7A">
+                <ScrollViewer x:Name="Essay" Margin="9,9,9,5">
+                    <TextBox x:Name="EssayTextBox" TextWrapping="Wrap" Margin="9,9,9,9" Background="{x:Null}" Foreground="White" SelectionBrush="#FF004AFF" BorderBrush="{x:Null}" FontSize="19" TextChanged="EssayTextBox_TextChanged"/>
+                </ScrollViewer>
+            </Border>
+            <Border x:Name="ChatBorder" BorderThickness="2" Margin="281,772,498,-99" Background="#FF9181F4" CornerRadius="15,15,15,15">
+                <Button x:Name="ChatBarButton" HorizontalAlignment="Center" VerticalAlignment="Center" Background="{x:Null}" BorderBrush="{x:Null}" Height="56" Width="202" Foreground="White" Content="Chat" FontSize="20" />
+            </Border>
+            <Border x:Name="UserListBorder" BorderThickness="2" Margin="519,772,260,-99" Background="#FF9181F4" CornerRadius="15,15,15,15">
+                <Button x:Name="UserListButton" HorizontalAlignment="Center" VerticalAlignment="Center" Background="{x:Null}" BorderBrush="{x:Null}" Height="56" Width="202" Foreground="White" Content="User list" FontSize="20" Click="Logout_Click" />
+            </Border>
+            <Border x:Name="WSettingsBorder" BorderThickness="2" Margin="754,772,25,-99" Background="#FF9181F4" CornerRadius="15,15,15,15">
+                <Button x:Name="WorkspaceSettings" HorizontalAlignment="Center" VerticalAlignment="Center" Background="{x:Null}" BorderBrush="{x:Null}" Height="56" Width="202" Foreground="White" Content="Workspace Settings" FontSize="20" Click="Logout_Click" />
+            </Border>
+            <Button x:Name="GoBackWP" Content="Button" Margin="30,34,914,0" VerticalAlignment="Top" Height="56" Foreground="{x:Null}" BorderBrush="{x:Null}" Click="GoBackWP_Click">
+                <Button.Background>
+                    <ImageBrush ImageSource="/Data/Image/arrow-small-left.png"/>
+                </Button.Background>
+            </Button>
+        </Grid>
+        <Grid x:Name="ToolbarGrid" Margin="10,7,865,-8" Visibility="Visible">
+            <Border x:Name="ToolbarBorder" BorderThickness="5,5,5,5" BorderBrush="#FF343746" Background="#FF474F7A" CornerRadius="20,20,20,20" Margin="0,0,0,19"/>
+            <Button x:Name="HomeButton" Margin="0,48,0,607" Background="{x:Null}" BorderBrush="{x:Null}" Click="HomeButton_Click">
+                <Image Height="62" Width="59" Source="/Data/Image/home.png"/>
+            </Button>
+            <Button x:Name="WorkspacesButton" Margin="0,220,0,435" Background="{x:Null}" BorderBrush="{x:Null}" Click="WorkspacesButton_Click">
+                <Image Height="62" Width="59" Source="/Data/Image/employees.png"/>
+            </Button>
+            <Button x:Name="MyProfileButton" Margin="2,398,2,251" Background="{x:Null}" BorderBrush="{x:Null}" Click="MyProfileButton_Click">
+                <Image Height="62" Width="59" Source="Data/Image/portrait.png"/>
+            </Button>
+            <Button x:Name="SettingsButton" Margin="-2,571,2,84" Background="{x:Null}" BorderBrush="{x:Null}" Click="SettingsButton_Click">
+                <Image Height="62" Width="59" Source="Data/Image/settings.png"/>
+            </Button>
+        </Grid>
+
+
+    </Grid>
+</Window>
