@@ -1,6 +1,6 @@
 # TeamUp - Real-Time Collaboration Platform
 
-**TeamUp** is a .NET Framework 4.8 desktop application built using WPF (Windows Presentation Foundation), designed to provide a seamless, real-time collaboration environment for students. It allows users to work together on essays and code simultaneously, with live synchronization and progress tracking.
+**TeamUp** is a .NET Framework 4.8 desktop application built using WPF (Windows Presentation Foundation), designed to provide a seamless, real-time collaboration environment for students. It allows users to work together on essays and code simultaneously, with live synchronization.
 
 ## Features
 
