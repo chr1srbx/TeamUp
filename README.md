@@ -6,7 +6,7 @@
 
 - **Real-Time Collaboration**: Edit documents or code with teammates in real time.
 - **Workspace System**: Create, manage, and persist custom workspaces.
-- **User Authentication**: Secure registration and login using JSON-stored credentials.
+- **User Authentication**: Unsecure registration and login using JSON-stored credentials, not recommened for use.
 - **Live Sync**: Auto-sync changes every 5 seconds to prevent version conflicts.
 - **Modern UI**: Clean, responsive WPF interface with animations and custom styles.
 - **Cross-User Interaction**: View and collaborate with other users inside the same workspace.
