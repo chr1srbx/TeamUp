@@ -33,3 +33,5 @@ TeamUp follows a **layered architecture**:
 - **Workspaces**: Manage and edit collaborative documents.
 - **MyProfile**: View personal data and log out.
 - **Settings**: Modify account options, reset settings, or enable topmost mode.
+
+C++ (WS) : https://github.com/chr1srbx/Local-Server-CPP
